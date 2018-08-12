@@ -4,16 +4,18 @@
   <h1 class="animated tada" >QUOTE</h1>
 </div>
 <div class="jumbotron">
-<form>
+    <div class="row">
+        <app-quote-form (Quote)="addNewQuote($event)"></app-quote-form>
+    </div>
+<form (ngSubmit)='submitQuote()' #QuoteForm='ngForm'>
 <div class="form-group">
   <label for="formGroupYourName" style=" color:white;" >Author</label>
-  <input type="text" class="form-control" id="formGroupYourName" placeholder="Author">
+  <input type="text" class="form-control" id="formGroupYourName" placeholder="Author"[(ngModel)]>
 </div>
-</form>
-<form>
+
   <div class="form-group">
     <label for="formGroupQuote" style=" color:white;">Quote</label>
-    <input type="text" class="form-control" id="formGroupQuote" placeholder="Quote" >
+    <input type="text" class="form-control" id="formGroupQuote" placeholder="Quote"  [(ngModel)]>
   </div>
 </form>
 <button class="btn btn-outline-light"> SUBMIT</button>

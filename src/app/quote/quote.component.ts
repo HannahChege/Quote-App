@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter} from '@angular/core';
+import { Quote } from '@angular/compiler';
+import { appendNgContent } from '@angular/core/src/view/ng_content';
 
 @Component({
   selector: 'app-quote',
@@ -13,3 +15,5 @@ export class QuoteComponent implements OnInit {
   }
 
 }
+
+
