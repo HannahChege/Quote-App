@@ -10,7 +10,8 @@ import { Quote } from '@angular/compiler';
 export class QuoteComponent implements OnInit 
 
 
-  
+  constructor() { }
+
   ngOnInit() {
   }
 
