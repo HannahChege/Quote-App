@@ -8,6 +8,11 @@ import { appendNgContent } from '@angular/core/src/view/ng_content';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  @Output() Quoted=new EventEmitter<Quote>();
+
+  submitQuote(){
+    this.Quoted.emit(this.newquote);
+  }
 
   constructor() { }
 

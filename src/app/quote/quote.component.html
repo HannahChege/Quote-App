@@ -1,22 +1,37 @@
+<div *ngFor='let quote of quoted'>
+  <li >{{quote.name}}</li> 
+  <app-quote-details [quote]='quote'></app-quote-details>
+</div>
+
 <div style="text-align:center">
 </div >
 <div>
   <h1 class="animated tada" >QUOTE</h1>
 </div>
 <div class="jumbotron">
-    <div class="row">
-        <app-quote-form (Quote)="addNewQuote($event)"></app-quote-form>
-    </div>
-<form (ngSubmit)='submitQuote()' #QuoteForm='ngForm'>
+<form (ngSubmit)='submitQuote()'>
 <div class="form-group">
-  <label for="formGroupYourName" style=" color:white;" >Author</label>
-  <input type="text" class="form-control" id="formGroupYourName" placeholder="Author"[(ngModel)]>
+  <label for="author" style=" color:white;" >Author</label>
+  <input class="form-control" id="author"  [(ngModel)]="newQuote.author" name="quote"placeholder="Author">
 </div>
 
   <div class="form-group">
-    <label for="formGroupQuote" style=" color:white;">Quote</label>
-    <input type="text" class="form-control" id="formGroupQuote" placeholder="Quote"  [(ngModel)]>
+    <label for="Submitter" style=" color:white;">Quote</label>
+    <input  class="form-control" id="submitter" name="submitter" [(ngModel)]="newQuote.submitter" placeholder="Quote">
   </div>
 </form>
-<button class="btn btn-outline-light"> SUBMIT</button>
+{{newQuote.submitter}}
+<button type="submit" name="button" class="btn btn-outline-light"> SUBMIT</button>
 </div>
+
+
+<div class="container-fluid">
+
+  <form (ngSubmit)="submitQuotes()">
+    <div class="form-group">
+      <label for="quote">Quote:</label>
+      <textarea  rows="4" class="form-control" [(ngModel)]="newQuote.quote" name="quote" required></textarea>
+    </div>
+   
+    
+    
