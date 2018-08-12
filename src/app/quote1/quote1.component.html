@@ -1,11 +1,14 @@
-<p>
-  quote1 works!
-</p>
+
+
 <div class="container">
-
-    <div class="row">
-        <app-quote (Quoted)="Quoted($event)"></app-quote>
-    </div>
-    
-</div>
-
+        <h1>Quotes</h1>
+      <div class="container-fluid">
+      
+      </div>
+        <ul>
+          <li *ngFor='let quote of quoted;let i = index'>{{quote.quote}} -{{quote.author}}- <button type="button" (click)="toggleDetails(i)">View</button>
+          <app-quote-details *ngIf="quote.showDescription" [quote]='quote'></app-quote-details> </li>
+        </ul>
+      
+      <app-quote (addQuote)="addNewQuotes($event)"></app-quote>
+      </div>

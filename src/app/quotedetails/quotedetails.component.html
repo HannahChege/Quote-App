@@ -1,9 +1,5 @@
-<div class="container">
-  <h1>Quotes</h1>
-  <ul>
-    <li *ngFor='let quote of quoted;let i = index'>{{quote.quote}} -{{quote.author}}- <button type="button" (click)="toggleDetails(i)">View</button>
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote'></app-quote-details> </li>
-  </ul>
-
-<app-quote (addQuote)="addNewQuotes($event)"></app-quote>
-</div>
+<p>
+  {{quote.submitter}}
+  <button type="button" > Upvote</button>
+  <button type ="button">Downvote</button>
+  </p>
