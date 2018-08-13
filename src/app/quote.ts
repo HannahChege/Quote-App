@@ -1,6 +1,17 @@
 export class Quote {
-    constructor(public Author:string, public Name:string,public Date:string){}
-}
-export class Goal {
-    constructor(public id:number, public name:string,public description:string){}
+    
+    constructor(public id:number, public name:string,public author:string,
+        public upvotes:number,public downvotes:number,
+        public quotestr:string,public timePosted:Date){
+
+
+
+       this.name=''
+       this.author=''
+       this.quotestr=''
+       this.upvotes=0
+       this.downvotes=0
+       this.timePosted= new Date()     
+
+    }
 }

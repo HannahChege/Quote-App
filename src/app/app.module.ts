@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// import {  };
 import { AppComponent } from './app.component';
-import { QuoteComponent } from './quote/quote.component';
+// import { QuoteComponent } from './quote/quote.component';
 import { QuotedetailsComponent } from './quotedetails/quotedetails.component';
+import { QuoteComponent } from './quote1/quote1.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { QuotedetailsComponent } from './quotedetails/quotedetails.component';
     AppComponent,
     QuoteComponent,
     QuotedetailsComponent,
+    QuoteComponent,
   
   ],
   imports: [

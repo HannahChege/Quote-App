@@ -1,5 +1,5 @@
 import { Component, OnInit,Output,EventEmitter} from '@angular/core';
-import { Quote } from '@angular/compiler';
+import { Quote } from '../quote';
 
 
 @Component({
@@ -7,14 +7,18 @@ import { Quote } from '@angular/compiler';
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css']
 })
-export class QuoteComponent implements OnInit 
+export class quoteComponent implements OnInit {
+newQuote = new Quote("","", new Date());
+@Output() addQuote = new EventEmitter<Quote>();
 
-
+submitQuotes() {
+  this.addQuote.emit(this.newQuote);
+}
   constructor() { }
 
   ngOnInit() {
   }
-
 }
+
 
 
