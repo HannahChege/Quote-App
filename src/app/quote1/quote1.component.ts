@@ -9,7 +9,7 @@ import {Quote} from '../quote';
 export class Quote1Component implements OnInit {
   showDetails=false;
   quotes = [
-    new Quote(1,'geut','Watch Finding Nemo','Find an online version and watch merlin find his son', 6,8,new Date(1534260637353));
+    new Quote(1,'Life is too short','Hannah','Chege', 0,0,new Date(1534260637353)),
 
 ];
 toggleDetails(index) {
