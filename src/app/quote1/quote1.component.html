@@ -1,6 +1,6 @@
 <div class="row">
         <div class="col-md-5">
-            <app-quote (createQuotes)="createNewQuote($event)"> </app-quote>
+            <app-quote (createQuote)="createNewQuote($event)"> </app-quote>
         </div>
         <br>
         <div class="col-md-7">
@@ -8,9 +8,10 @@
                 <h3>Quote: {{Quote.quote}}</h3>
                 <p>Author name:{{Quote.author}}</p>
                 <p>Submitted by: {{Quote.person}}</p>
-                <p>Created {{Quote.dateCreated|timeCount}}</p>
-                <button (click)='toggleDetails(i)'>Toggle Details</button>
-                <app-quotedetails *ngIf='quote.showauthor'[Quote]='quote' (complete)='deleteQuote($event,i)'></app-quotedetails>
+                <p>Created {{Quote.dateCreated| timeCount}}</p>
+                <app-quotedetails></app-quotedetails>
+                <app-quotedetails *ngIf='showDetails' [quotes]='Quote' (complete)='deleteQuote($event,i)'></app-quotedetails>
+            
             </div>
         </div>
     </div>

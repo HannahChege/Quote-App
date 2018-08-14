@@ -1,24 +1,49 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'timeCount'
+ name: 'timeCount'
 })
 export class DateCountPipe implements PipeTransform {
-
-    transform(value: any): number {
-      let today:Date = new Date(); //get current date and time
-      let todayWithNoTime:any = new Date(today.getFullYear(),today.getMonth(),today.getDate())
-      var dateDifference =Math.abs(value-todayWithNoTime )// returns value in milliseconds
-      const secondsInADay= 86400; //60 seconds*60 minutes in an hour *24 hours
-  
-      var dateDifferenceSeconds=dateDifference*0.001; //converts to seconds
-  
-      var dateCounter = dateDifferenceSeconds/secondsInADay;
-  
-      if (dateCounter >= 1){
-          return dateCounter;
-      }else{
-          return 0;
-      }
-    }
-  }
+ now: Date;
+ seconds: number;
+ minutes: number;
+ hours: number;
+ days: number;
+ months: number;
+ transform(posted: Date): any {
+   this.now=new Date();
+   this.seconds=Math.floor(this.now.getTime()/1000-posted.getTime()/1000);
+   this.minutes=Math.floor(this.seconds/60);
+   this.hours=Math.floor(this.minutes/60);
+   this.days=Math.floor(this.hours/24);
+   this.months=Math.floor(this.days/30);
+   if (this.months > 0) {
+     if (this.months == 1) {
+       return this.months + ' month ago'
+     }
+     return this.months + ' months ago'
+   }
+   if (this.days > 0) {
+     if (this.days == 1) {
+       return this.days + ' day ago'
+     }
+     return this.days + ' days ago'
+   }
+   if (this.hours > 0) {
+     if (this.hours == 1) {
+       return this.hours + ' hour ago'
+     }
+     return this.hours + ' hours ago'
+   }
+   if (this.minutes > 0) {
+     if (this.minutes == 1) {
+       return this.minutes + ' minute ago'
+     }
+     return this.minutes + ' minutes ago'
+   }
+   if(this.seconds==1){
+     return this.seconds+' second ago'
+   }
+   return this.seconds + ' seconds ago'
+ }
+}

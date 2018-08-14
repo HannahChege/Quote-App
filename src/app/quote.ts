@@ -1,6 +1,7 @@
 export class Quote {
   public showDetails: boolean;
   constructor(
+    public id: number,
     public quote: string,
     public author: string,
     public person: string,
