@@ -1,5 +1,14 @@
-<p>
-  {{quote.submitter}}
-  <button type="button" > Upvote</button>
-  <button type ="button">Downvote</button>
-  </p>
+ <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-success" name="up" (click)="upVotes(i)">Like{{Quote.upVotes}}</button>
+      </div>
+      <div class="col-md-6">
+            <button class="btn btn-warning" name="down" (click)="downVotes(i)">Like{{Quote.downVotes}}</button>
+            </div>
+            <br>
+            <div class="row">
+    <div class="col-md-12">
+          <button class="btn btn-danger" (click)="deleteQuote(true)">Delete Quote</button>
+      </div>
+  </div>
+

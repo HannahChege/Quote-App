@@ -1,15 +1,17 @@
-
-
-<div class="container">
-        <h1>Quotes</h1>
-      <div class="container-fluid">
-      
-      </div>
-        <ul>
-          <li *ngFor='let quote of quoted;let i = index'>{{quote.quote}} -{{quote.author}}- <button type="button" (click)="toggleDetails(i)">View</button>
-          <app-quote-details *ngIf="quote.showDescription" [quote]='quote'></app-quote-details> </li>
-        </ul>
-      
-      <app-quote (addQuote)="addNewQuotes($event)"></app-quote>
-      </div>
+<div class="row">
+        <div class="col-md-5">
+            <app-quote (createQuotes)="createNewQuote($event)"> </app-quote>
+        </div>
+        <br>
+        <div class="col-md-7">
+            <div class="jumbotron" *ngFor="let Quote of quotes;let i= index">
+                <h3>Quote: {{Quote.quote}}</h3>
+                <p>Author name:{{Quote.author}}</p>
+                <p>Submitted by: {{Quote.person}}</p>
+                <p>Created {{Quote.dateCreated|timeCount}}</p>
+                <button (click)='toggleDetails(i)'>Toggle Details</button>
+                <app-quotedetails *ngIf='quote.showauthor'[Quote]='quote' (complete)='deleteQuote($event,i)'></app-quotedetails>
+            </div>
+        </div>
+    </div>
       

@@ -1,28 +1,34 @@
-<div *ngFor='let quote of quoted'>
-  <li >{{quote.name}}</li> 
-  <app-quote-details [quote]='quote'></app-quote-details>
-</div>
-
 <div style="text-align:center">
 </div >
 <div>
   <h1 class="animated tada" >QUOTE</h1>
 </div>
 <div class="jumbotron">
-<form (ngSubmit)='submitQuote()'>
+<form (ngSubmit)='submitQuote()' #quoteForm='ngForm'> 
 <div class="form-group">
-  <label for="author" style=" color:white;" >Author</label>
-  <input class="form-control" id="author"  [(ngModel)]="newQuote.author" name="quote"placeholder="Author">
+  <label for="Submitter"  style=" color:white;"  >Author:</label>
+  <input type="text" class="form-control" id="author"  [(ngModel)]="newQuote.author" name="author"  #author="ngModel" placeholder="Author" required>
 </div>
 
   <div class="form-group">
-    <label for="Submitter" style=" color:white;">Quote</label>
-    <input  class="form-control" id="submitter" name="submitter" [(ngModel)]="newQuote.submitter" placeholder="Quote">
+    <label for="Submitter" style=" color:white;"  >Quote:</label>
+    <input  class="form-control" id="submitter" name="submitter" [(ngModel)]="newQuote.Quote" #quote="ngModel" placeholder="Quote" required>
   </div>
-</form>
-{{newQuote.submitter}}
-<button type="submit" name="button" class="btn btn-outline-light"> SUBMIT</button>
+  <div class="form-group">
+    <label for="person" style=" color:white;">Submitted by: </label><br>
+    <input type="text" id="person" [(ngModel)]="newQuote.person" name="person" #person="ngModel" required>
+</div>
+<div class="form-group">
+    <label for="Date"style=" color:white;" >Submitted on: </label><br>
+    <input type="date" id="Date" [(ngModel)]="newQuote.dateCreated" name="Date" #Date="ngModel" required>
+    <div [hidden]="Date.valid||Date.pristine" class="alert alert-danger">
+    </div>
 </div>
 
+<button type="submit" name="button" class="btn btn-outline-light"> SUBMIT</button>
+</form>
+
+
+</div>
  
     
