@@ -18,8 +18,8 @@ toggleDetails(index) {
   createNewQuote($event) {
     $event.id = this.quotes.length+1;
     $event.dateCreated =new Date();
-    $event.upvote=0;
-    $event.downvote=0;
+    $event.upVote=0;
+    $event.downVote=0;
     this.quotes.unshift($event);
   }
   quoteComplete(Complete, index) {
@@ -28,12 +28,12 @@ toggleDetails(index) {
     }
   }
 
-  Upvote(index) {
-    this.quotes[index].upVotes += 1;
+  upvote() {
+    this.quotes.upVotes += 1;
   }
 
   downvote(index) {
-      this.quotes[index].downVotes += 1;
+      this.quotes.downVotes += 1;
     }
 
   constructor() { }

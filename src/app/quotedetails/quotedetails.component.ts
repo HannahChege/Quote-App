@@ -6,15 +6,16 @@ import { Quote } from '../quote';
   styleUrls: ['./quotedetails.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
+  tile='tile';
   @Input() quotes: Quote;
   @Output() complete = new EventEmitter<boolean>();
 
 
-  upVote() {
-    this.quotes.upVotes
+  upVotes() {
+    this.quotes.upVotes++;
   }
-downvote() {
-  this.quotes.downVotes
+downVotes() {
+  this.quotes.downVotes++;
 }
   deleteQuote(deleteIt: boolean) {
     this.complete.emit(deleteIt);
