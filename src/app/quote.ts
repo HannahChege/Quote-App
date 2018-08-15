@@ -20,6 +20,9 @@ export class Quote {
       this.downVoteFunction=function() {
           this.downVotes += 1;
         }
+        this.upVoteFunction=function() {
+          this.upVotes += 1;
+        }
       this.showDetails = false;
   }
 }

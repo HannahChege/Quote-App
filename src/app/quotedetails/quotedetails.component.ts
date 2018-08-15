@@ -6,8 +6,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quotedetails.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
-  tile='tile';
-  @Input() quotes: Quote;
+  quotes: Quote;
   @Output() complete = new EventEmitter<boolean>();
 
 

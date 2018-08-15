@@ -28,13 +28,6 @@ toggleDetails(index) {
     }
   }
 
-  upvote() {
-    this.quotes.upVotes += 1;
-  }
-
-  downvote(index) {
-      this.quotes.downVotes += 1;
-    }
 
   constructor() { }
 
