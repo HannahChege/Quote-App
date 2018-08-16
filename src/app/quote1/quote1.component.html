@@ -7,17 +7,16 @@
             <div class="jumbotron" *ngFor="let quot of quotes;let i= index">
                 <h3>Quote: {{quot.quote}}</h3>
                 <p>Author name:{{quot.author}}</p>
-                <p>Author name:{{quot.downVotes}}</p>
 
                 <p>Submitted by: {{quot.person}}</p>
                 <p>Created {{quot.dateCreated| timeCount}}</p>
  
                 <div class="row">
                         <div class="col-md-6">
-                          <button class="btn btn-success" name="up" (click)="quot.upVotes()">Like{{quot.upVotes}}</button>
+                          <button class="btn btn-success" name="up" (click)="this.upVotes()">Like{{quot.upVotes}}</button>
                         </div>
                         <div class="col-md-6">
-                              <button class="btn btn-warning" name="down" (click)="quot.downVotes()">Dislike{{quot.downVotes}}</button>
+                              <button class="btn btn-warning" name="down" (click)="this.downVotes()">Dislike{{quot.downVotes}}</button>
                               </div>
                               <br>
                               <div class="row">
@@ -26,7 +25,6 @@
                         </div>
                     </div>
                   
-                                  <app-quotedetails *ngIf='showDetails' [quotes]='quot' (complete)='deleteQuote($event,i)'></app-quotedetails>
             
             </div>
         </div>

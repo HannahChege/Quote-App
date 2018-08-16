@@ -7,19 +7,13 @@ import {Quote} from '../quote';
   styleUrls: ['./quote1.component.css']
 })
 export class Quote1Component implements OnInit {
-  showDetails=false;
-  quotes = [
-    new Quote(1,'Life is too short','Hannah','Chege', 0,0,new Date(1534260637353)),
+  @Input() quotes= Array<Quote>();
 
-];
-toggleDetails(index) {
-    this.quotes[index].showDetails = !this.quotes[index].showDetails;
-  }
   createNewQuote($event) {
     $event.id = this.quotes.length+1;
     $event.dateCreated =new Date();
-    $event.upVote=0;
-    $event.downVote=0;
+    // $event.upVote=0;
+    // $event.downVote=0;
     this.quotes.unshift($event);
   }
   quoteComplete(Complete, index) {
@@ -27,7 +21,6 @@ toggleDetails(index) {
       this.quotes.splice(index, 1);
     }
   }
-
 
   constructor() { }
 
