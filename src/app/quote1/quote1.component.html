@@ -11,19 +11,19 @@
                 <p>Submitted by: {{quot.person}}</p>
                 <p>Created {{quot.dateCreated| timeCount}}</p>
  
-                <div class="row">
+                 <div class="row">
                         <div class="col-md-6">
-                          <button class="btn btn-success" name="up" (click)="this.upVotes()">Like{{quot.upVotes}}</button>
+                          <button class="btn btn-success" name="up" (click)="this.upvote()">Like{{quot.upvote}}</button>
                         </div>
                         <div class="col-md-6">
-                              <button class="btn btn-warning" name="down" (click)="this.downVotes()">Dislike{{quot.downVotes}}</button>
+                              <button class="btn btn-warning" name="down" (click)="this.downvote()">Dislike{{quot.downvote}}</button>
                               </div>
                               <br>
                               <div class="row">
                       <div class="col-md-12">
                             <button class="btn btn-danger" (click)="deleteQuote(true)">Delete Quote</button>
                         </div>
-                    </div>
+                    </div> 
                   
             
             </div>

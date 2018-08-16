@@ -12,8 +12,8 @@ export class Quote1Component implements OnInit {
   createNewQuote($event) {
     $event.id = this.quotes.length+1;
     $event.dateCreated =new Date();
-    // $event.upVote=0;
-    // $event.downVote=0;
+     $event.upVote=0;
+     $event.downVote=0;
     this.quotes.unshift($event);
   }
   quoteComplete(Complete, index) {
