@@ -22,6 +22,7 @@ export class Quote1Component implements OnInit {
     }
   }
 
+
   constructor() { }
 
   ngOnInit() {

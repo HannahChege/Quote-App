@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.card{
+    background-image: url(./assets/6.png);
+}
+h1{
+    text-align: center;
+    font-size: 100px;
+
+}
+.jumbotron{
+    background-color: darkgray;
+}
+h3,p1{
+text-align: center;
+font-style: italic;
+}
