@@ -7,7 +7,11 @@ import {Quote} from '../quote';
   styleUrls: ['./quote1.component.css']
 })
 export class Quote1Component implements OnInit {
-  @Input() quotes= Array<Quote>();
+  @Input() quotes=[
+    new Quote(1,'Maya Angelou','The meaning of life is to find your gift','Maya',7,6,new Date,),
+    new Quote(2,'William Blake','If a thing loves it is infinite','Blake',7,6,new Date,),
+    new Quote(3,'You cant','haveadream','',7,6,new Date,),
+  ] 
 
   createNewQuote($event) {
     $event.id = this.quotes.length+1;
@@ -16,11 +20,12 @@ export class Quote1Component implements OnInit {
      $event.downVote=0;
     this.quotes.unshift($event);
   }
-  quoteComplete(Complete, index) {
-    if (Complete) {
+  quoteDelete(isComplete, index) {
+    if (isComplete) {
       this.quotes.splice(index, 1);
     }
   }
+
 
 
   constructor() { }

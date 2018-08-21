@@ -13,20 +13,18 @@
  
                  <div class="row">
                         <div class="col-md-4">
-                          <button class="btn btn-success" name="up" (click)="this.upvote()">Like{{quot.upvote}}</button>
+                          <button class="btn btn-success" name="up" (click)="upVote()">Like{{quot.upvote}}</button>
                         </div>
                         <div class="col-md-4">
-                              <button class="btn btn-warning" name="down" (click)="this.downvote()">Dislike{{quot.downvote}}</button>
+                              <button class="btn btn-warning" name="down" (click)="downVote()">Dislike{{quot.downvote}}</button>
                               </div>
                               <br>
                               <div class="row">
                       <div class="col-md-4">
-                            <button class="btn btn-danger" (click)="deleteQuote(true)">Delete Quote</button>
+                            <button class="btn btn-danger" (click)="quoteDelete()">Delete Quote</button>
                         </div>
-                    </div> 
-                  
-            
+                    </div>
             </div>
         </div>
     </div>
-      
+    
