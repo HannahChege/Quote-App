@@ -1,5 +1,10 @@
 .card{
     background-image: url(./assets/6.png);
+    border-color: white;
+    border-style: solid;
+    border-color: lightgray;
+    box-shadow: 0 0 6px 6px;
+    padding-left: 30px;
 }
 h1{
     text-align: center;
@@ -8,6 +13,10 @@ h1{
 }
 .jumbotron{
     background-color: darkgray;
+    border-style: solid;
+  border-color: lightgray;
+  box-shadow: 0 0 6px 6px;
+  padding-left: 30px;
 }
 h3,p1{
 text-align: center;

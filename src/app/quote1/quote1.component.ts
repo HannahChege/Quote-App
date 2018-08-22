@@ -10,7 +10,7 @@ export class Quote1Component implements OnInit {
   @Input() quotes=[
     new Quote(1,'Maya Angelou','The meaning of life is to find your gift','Maya',7,6,new Date,),
     new Quote(2,'William Blake','If a thing loves it is infinite','Blake',7,6,new Date,),
-    new Quote(3,'You cant','haveadream','',7,6,new Date,),
+    new Quote(3,'Hannah','Life is too short','chege',7,6,new Date,),
   ] 
 
   createNewQuote($event) {
